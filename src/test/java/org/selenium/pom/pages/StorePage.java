@@ -2,7 +2,10 @@ package org.selenium.pom.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.selenium.pom.base.BasePage;
+
+import java.time.Duration;
 
 public class StorePage  extends BasePage {
     private final By searchFld = By.id("woocommerce-product-search-field-0");
@@ -34,7 +37,9 @@ public class StorePage  extends BasePage {
     }
 
     private By getAddToCartBtnElement(String productName){
+
         return By.cssSelector("a[aria-label='Add “" + productName + "” to your cart']");
+
     }
 
     public StorePage clickAddToCartBtn(String productName){
